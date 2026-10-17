@@ -1,0 +1,9 @@
+{
+  "name": "hook-roaster",
+  "private": true,
+  "description": "Score a LinkedIn hook, roast it kindly, and get three stronger rewrites. Client-side only.",
+  "scripts": {
+    "test": "node tests/engine.test.js",
+    "start": "python3 -m http.server 4173"
+  }
+}
