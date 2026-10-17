@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hook Roaster — score your LinkedIn opener</title>
+    <meta
+      name="description"
+      content="Paste a LinkedIn hook. Get a score out of 100, a kind roast, and three stronger rewrites. A client-side writing tool by Taha Ahsan."
+    />
+    <meta name="theme-color" content="#140c09" />
+    <link rel="canonical" href="https://taha080.github.io/hook-roaster/" />
+    <meta property="og:title" content="Hook Roaster" />
+    <meta
+      property="og:description"
+      content="Paste a LinkedIn opener. Get a score, a kind roast, and three stronger ways to begin."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://taha080.github.io/hook-roaster/" />
+    <meta property="og:image" content="https://taha080.github.io/hook-roaster/assets/preview.jpg" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#hook">Skip to the hook</a>
+    <div class="embers" aria-hidden="true">
+      <span class="ember ember-a"></span>
+      <span class="ember ember-b"></span>
+    </div>
+
+    <header class="wrap site-header">
+      <p class="eyebrow">A writing bench for LinkedIn openers</p>
+      <div class="title-row">
+        <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+          <path
+            fill="#ff8a3d"
+            d="M24.2 3.5c.4 6.2-3.2 9.4-3.6 15.2 3.8-2.4 8.6.4 9.2 6.2 5.6-6.6 3.2-16.2.4-20.6 7.4 6.2 11.6 15.2 11.6 23.2 0 9.6-7.6 16.5-17.2 16.5S7.2 37.1 7.2 27.5c0-7.6 4.8-12.8 8.2-17.6 1.6 4.6 5.4 7.2 8.8 8.6-.6-6.2.4-11.2 0-15z"
+          />
+          <path
+            fill="#ffd27a"
+            d="M24 20.5c2.2 3.2 2.4 6.4.6 9.6 2.8-1 5.2 1.2 5.2 4.2 0 3.6-2.8 6.2-6.4 6.2s-6.2-2.6-6.2-6c0-3.4 2.2-5.2 3.6-8.2 1.2 1.6 2.2 2.2 3.2 2.6.2-3.2-.2-6.2 0-8.4z"
+          />
+        </svg>
+        <h1>Hook <em>Roaster</em></h1>
+      </div>
+      <p class="lede">
+        Paste the opening line of a LinkedIn post. Get a score out of 100, a roast with the gloves half on, and three
+        stronger ways to begin.
+      </p>
+    </header>
+
+    <main class="wrap layout">
+      <section class="panel composer" aria-labelledby="composer-title">
+        <div class="panel-head">
+          <h2 id="composer-title">The opener</h2>
+          <p>The first lines are the whole preview. Paste those, not the essay underneath.</p>
+        </div>
+        <form id="composer">
+          <label class="sr-only" for="hook">LinkedIn opening lines</label>
+          <textarea
+            id="hook"
+            name="hook"
+            maxlength="700"
+            rows="7"
+            placeholder="I spent 3 years writing posts nobody read. Then I changed the first line."
+            required
+          ></textarea>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <div class="composer-bar">
+            <p id="count" class="count">0 words · 0/700</p>
+            <button class="roast-btn" type="submit">Roast this hook</button>
+          </div>
+          <p class="hint">⌘/Ctrl + Enter. Scoring stays in this browser. Nothing is uploaded.</p>
+        </form>
+
+        <div class="examples">
+          <p id="examples-label">Try a hook</p>
+          <div id="chips" class="chips" role="group" aria-labelledby="examples-label"></div>
+        </div>
+
+        <details class="method">
+          <summary>How the score works</summary>
+          <p>
+            Hook Roaster weighs five signals, 20 points each: curiosity, clarity, specificity, emotion, and length /
+            scannability. It looks for power words, numbers, questions, filler, clichés, line length, and whether the
+            reader shows up as “you.” Rewrites are templates filled with the topic, role, and numbers it finds in your
+            opener. Edit any scene so the story is actually yours.
+          </p>
+        </details>
+      </section>
+
+      <section class="ticket" id="ticket" aria-live="polite" aria-atomic="false">
+        <div class="ticket-brand">
+          <span>Hook Roaster</span>
+          <span class="ticket-rule">Table one</span>
+        </div>
+        <div id="placeholder" class="placeholder">
+          <p class="placeholder-kicker">Awaiting a hook</p>
+          <ol>
+            <li>A score across five signals</li>
+            <li>A roast that still wants you to post</li>
+            <li>Three rewrites: bold claim, story, question</li>
+          </ol>
+        </div>
+        <div id="result" hidden>
+          <div class="score-row">
+            <div class="dial" id="dial" style="--p: 0">
+              <div class="dial-hole">
+                <strong id="score">0</strong>
+                <span>/100</span>
+              </div>
+            </div>
+            <div class="score-copy">
+              <p class="stamp" id="verdict">Needs fire</p>
+              <p class="kind" id="kind"></p>
+            </div>
+          </div>
+          <blockquote class="roast" id="roast-line"></blockquote>
+          <div id="meters" class="meters"></div>
+          <h3>Do this next</h3>
+          <ul id="tips" class="tips"></ul>
+          <div class="rewrite-intro">
+            <h3>Stronger rewrites</h3>
+            <p>Templates from your topic. Change any detail that is not yours before you post it.</p>
+          </div>
+          <div id="rewrites" class="rewrites"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap site-footer">
+      <p>
+        Built by
+        <a href="https://www.linkedin.com/in/taha-ahsan-832475270/" target="_blank" rel="noopener noreferrer">Taha Ahsan</a>
+        ·
+        <a href="https://github.com/taha080" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </footer>
+    <noscript>Hook Roaster needs JavaScript. It still runs entirely in your browser.</noscript>
+    <script src="js/engine.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
